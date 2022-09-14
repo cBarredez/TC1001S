@@ -42,13 +42,36 @@ def circle(start, end):
 
 
 def rectangle(start, end):
-    """Draw rectangle from start to end."""
-    pass  # TODO
+    up()
+    goto(start.x, start.y)
+    down()
+    begin_fill()
+    
+    forward(end.x*2 - start.x*2) #change the size of the of the one side of the shape
+    left(90) #change the direccion of the vector
+    
+    forward(end.x - start.x) #use the normal size of the square
+    left(90)
+    
+    forward(end.x*2 - start.x*2) #change the size of the of the other side of the shape
+    left(90)
+    
+    forward(end.x - start.x)#use the normal size of the square
+
+    end_fill()
 
 
 def triangle(start, end):
-    """Draw triangle from start to end."""
-    pass  # TODO
+    #the same base as the square
+    up()
+    goto(start.x, start.y)
+    down()
+    begin_fill()
+    for count in range(3):
+        forward(end.x - start.x)
+        left(120) #It use a change of 120° to make different angles
+
+    end_fill()
 
 
 def tap(x, y):
