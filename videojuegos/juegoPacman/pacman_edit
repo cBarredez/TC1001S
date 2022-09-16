@@ -16,21 +16,21 @@ state = {'score': 0}
 path = Turtle(visible=False)
 writer = Turtle(visible=False)
 aim = vector(5, 0)
-#Aqui se cambai la posicion de donde inicia nuestro pacman
+#In this part we change the position where our pacman starts
 pacman = vector(90, 80)
 ghosts = [
     [vector(-180, 160), vector(5, 0)],
     [vector(-180, -160), vector(0, 5)],
     [vector(100, 160), vector(0, -5)],
     [vector(100, -160), vector(-5, 0)],
-    #Aqui agregamos 2 nuevos fantasmas
+    #Here we add 2 new ghosts
     [vector(-40, -80), vector(15, -10)],
     [vector(-120, 130), vector(18, -10)],
 
 ]
 # fmt: off
-#1. Aqui cambiamos el tablero, lo que se hizo fue algo creativo, poniendo la palabra "TEC" abajo del tablero
 
+#Here we change the board, what we did was something creative, putting the word "TEC" under the board
 tiles = [
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
@@ -160,8 +160,8 @@ def move():
     for point, course in ghosts:
         if abs(pacman - point) < 20:
             return
-#Con este valor cambiamos la velocidad de los fantasmas y el pacman
-#Entre mayor sea el número mas lento se moverán y entre mas pequeño más rápido.
+#With this value we change the speed of the ghosts and the pacman.
+#The higher the number we put, the slower they will move and vice versa, if we write a smaller number, they will move faster.
     ontimer(move, 140)
 
 
