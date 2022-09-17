@@ -49,7 +49,7 @@ def move():
         food.x = randrange(-15, 15) * 10
         food.y = randrange(-15, 15) * 10
     else:
-    
+        # random number to know how the food is going to move
         movefood = randrange(0,3)
         if movefood == 0:
             food.x += 10
@@ -60,7 +60,7 @@ def move():
         elif movefood == 3:
             food.y += 10
 
-        if not insidef(food):
+        if not insidef(food): # Return true if the food is inside de boundaries
             square(head.x, head.y, 9, 'red')
             update()
             return
