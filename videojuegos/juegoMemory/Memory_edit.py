@@ -18,6 +18,8 @@ car = path('car.gif')
 tiles = list(range(32)) * 2
 state = {'mark': None}
 hide = [True] * 64
+taps =0 # create a variable for counting the taps 
+complete = 0 # create a variable for counting if it finish making pairs
 
 
 def square(x, y):
@@ -45,8 +47,11 @@ def xy(count):
 
 def tap(x, y):
     """Update mark and hidden tiles based on tap."""
+    global taps, complete # globalize the variables so it don't mistake it with the inicial 
     spot = index(x, y)
     mark = state['mark']
+    taps +=1 # add a tap
+    print('Taps: ', taps) # print in the terminal the count of taps 
 
     if mark is None or mark == spot or tiles[mark] != tiles[spot]:
         state['mark'] = spot
@@ -54,7 +59,10 @@ def tap(x, y):
         hide[spot] = False
         hide[mark] = False
         state['mark'] = None
+        complete +=1 # add a pair completed 
 
+    if complete == 32:
+        print('You Win!!!') # print if you win if you completed the 32 pairs 
 
 def draw():
     """Draw image and tiles."""
