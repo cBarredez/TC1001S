@@ -13,6 +13,7 @@ from turtle import *
 import math
 from freegames import vector
 
+t = Turtle() # make a new turtle
 
 def line(start, end):
     """Draw line from start to end."""
@@ -38,12 +39,10 @@ def square(start, end):
 
 def circle(start, end):
     "Draw circle from start to end."
-    up()
-    goto(start.x, start.y)
-    down()
-    a = math.sqrt((start.x-end.x)**2+(start.y - end.y)**2) # make de area of the circle  
+    a = math.sqrt((start.x-end.x)**2+(start.y - end.y)**2)  # make de area of the circle  
+    hideturtle()
     begin_fill()
-    turtle.circle(a) # use a function to make the circle with the area 
+    t.circle(a) # use a function to make the circle with the area 
     end_fill()
 
 
