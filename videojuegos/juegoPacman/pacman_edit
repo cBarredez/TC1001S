@@ -157,6 +157,7 @@ def move():
 
     update()
 
+#In the next cycle we can modify the complexity or intelligence of the ghosts.
     for point, course in ghosts:
         if abs(pacman - point) < 20:
             return
