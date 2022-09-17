@@ -41,9 +41,9 @@ def circle(start, end):
     up()
     goto(start.x, start.y)
     down()
-    a = math.sqrt((start.x-end.x)**2+(start.y - end.y)**2) 
+    a = math.sqrt((start.x-end.x)**2+(start.y - end.y)**2) # make de area of the circle  
     begin_fill()
-    turtle.circle(a)
+    turtle.circle(a) # use a function to make the circle with the area 
     end_fill()
 
 
